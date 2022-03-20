@@ -8,11 +8,10 @@ const {
 } = require("../controllers/restaurants.controller");
 const router = express.Router();
 
-router.get("/", getRestaurants);
+router.route("/").get(getRestaurants).post(createRestaurant);
 router
 	.route("/:id")
 	.get(getSingleRestaurant)
-	.post(createRestaurant)
 	.put(updateRestaurant)
 	.delete(deleteRestaurant);
 
