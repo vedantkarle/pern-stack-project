@@ -45,7 +45,10 @@ const RestaurantList = () => {
 			</Thead>
 			<Tbody>
 				{restaurants?.map(r => (
-					<Tr key={r.id}>
+					<Tr
+						style={{ cursor: "pointer" }}
+						key={r.id}
+						onClick={() => navigate(`/restaurants/${r.id}`)}>
 						<Td>{r.name}</Td>
 						<Td>{r.location}</Td>
 						<Td>{"$".repeat(r.price_range)}</Td>
